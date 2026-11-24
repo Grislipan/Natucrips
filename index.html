@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NUTICRIPS® (NatuCrisp) | Tienda Oficial — Snacks Naturales de Frutas y Verduras Deshidratadas</title>
+  <meta name="description" content="Tienda oficial de NUTICRIPS, S.A. de C.V. (NatuCrisp). Snacks crujientes de frutas y verduras deshidratadas en bolsas resellables de 60 g: Mix Tropical, Manzana Canela, Verduras Mix y Plátano Natural.">
+  <meta name="theme-color" content="#124B2C">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <script>
+    if (!window.matchMedia || !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js-anim');
+    }
+  </script>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- ANIMACIÓN DE APERTURA NUTICRIPS (Se ejecuta cada vez que abre la página) -->
+  <div class="intro-splash" id="intro-splash" aria-hidden="true">
+    <canvas class="intro-splash__fx" id="intro-fx"></canvas>
+    <div class="intro-splash__glow"></div>
+    <div class="intro-splash__inner">
+      <div class="intro-splash__logo-wrap">
+        <img
+          src="./assets/logo-natucrisp-negativo.jpg"
+          alt=""
+          class="intro-splash__logo"
+          width="280"
+          height="219"
+          fetchpriority="high"
+        >
+        <div class="intro-splash__sheen"></div>
+      </div>
+      <p class="intro-splash__tag">Snacks naturales, grandes momentos</p>
+      <div class="intro-splash__bar"><span></span></div>
+    </div>
+  </div>
+
+  <!-- Barra de progreso superior -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress__bar" id="scroll-progress-bar"></div>
+  </div>
+
+  <!-- FRANJA PROMOCIONAL SUPERIOR -->
+  <div class="promo-bar" role="region" aria-label="Promoción destacada">
+    <div class="container promo-bar__inner">
+      <span class="promo-bar__badge">NUEVO EN TEXCOCO</span>
+      <p class="promo-bar__text">
+        Bolsas resellables de 60 g a <strong>$49 MXN</strong> · Con <strong>NUTICRIPS Contigo</strong> acumula 50 pts y llévate <strong>1 bolsa gratis</strong>.
+      </p>
+      <a href="#producto" class="promo-bar__link">Ir a Producto →</a>
+    </div>
+  </div>
+
+  <!-- HEADER OFICIAL (Orden exacto solicitado en una sola línea limpia) -->
+  <header class="site-header" id="site-header">
+    <div class="container nav-bar">
+      <a href="#inicio" class="brand-mark" aria-label="NUTICRIPS NatuCrisp - Inicio">
+        <img
+          src="./assets/logo-natucrisp.png"
+          alt="NatuCrisp — Snacks naturales, grandes momentos"
+          class="brand-mark__img"
+          width="142"
+          height="58"
+          fetchpriority="high"
+        >
+      </a>
+
+      <nav class="site-nav" aria-label="Navegación principal">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#inicio" class="nav-link is-active">Inicio</a></li>
+          <li><a href="#empresa" class="nav-link">Empresa</a></li>
+          <li><a href="#antecedentes" class="nav-link">Antecedentes</a></li>
+          <li><a href="#mision-vision" class="nav-link">Misión y Visión</a></li>
+          <li><a href="#organigrama" class="nav-link">Organigrama</a></li>
+          <li><a href="#producto" class="nav-link">Producto</a></li>
+          <li><a href="#de-que-esta-hecho" class="nav-link">¿De qué está hecho?</a></li>
+          <li><a href="#opiniones" class="nav-link">Opiniones</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button
+          type="button"
+          class="cart-btn"
+          id="open-cart-btn"
+          aria-label="Abrir carrito de pedido"
+          aria-controls="cart-drawer"
+          aria-expanded="false"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+            <path d="M3 6h18" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
+          <span class="cart-btn__count" id="cart-count">0</span>
+        </button>
+        <button
+          type="button"
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-expanded="false"
+          aria-controls="nav-links"
+          aria-label="Abrir menú de navegación"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido-principal">
+    <!-- 1. INICIO: HERO EDITORIAL + CARRUSEL AUTOMÁTICO DE PRODUCTOS -->
+    <section class="store-hero" id="inicio">
+      <div class="container store-hero__layout">
+        <div class="store-hero__copy hero-enter">
+          <div class="kicker-tag">
+            <span class="kicker-tag__dot" aria-hidden="true"></span>
+            <span>SNACKS NATURALES · GRANDES MOMENTOS</span>
+          </div>
+
+          <h1 class="store-hero__title">
+            Crujiente por fuera, <span class="text-crimson">fruta y verdura real</span> por dentro.
+          </h1>
+
+          <p class="store-hero__lead">
+            En <strong>NUTICRIPS® (NatuCrisp)</strong> deshidratamos por lotes frutas y verduras seleccionadas para crear botanas ligeras en prácticas bolsas kraft resellables de <strong>60 g</strong>. Sabor honesto, color vivo y trazabilidad desde nuestra planta proyectada en Texcoco.
+          </p>
+
+          <div class="store-hero__actions">
+            <a href="#producto" class="btn btn--crimson btn--lg">
+              <span>Ver Productos y Carrito</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="#de-que-esta-hecho" class="btn btn--outline-forest btn--lg">
+              ¿De qué está hecho?
+            </a>
+          </div>
+
+          <ul class="trust-strip" aria-label="Garantías de calidad NUTICRIPS">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/></svg>
+              <span>100% Fruta y Verdura Real</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+              <span>Control NOM-251 &amp; NOM-051</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/></svg>
+              <span>Bolsa Kraft 60 g Resellable</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Carrusel Automático de Productos (Sin controles manuales ni hojas) -->
+        <div class="store-hero__visual hero-enter hero-enter--delay">
+          <div class="hero-stage-card" id="hero-stage-card">
+            <canvas class="fx-canvas" id="hero-fx" aria-hidden="true"></canvas>
+
+            <div class="price-sticker" aria-label="Precio de referencia 49 pesos por bolsa de 60 gramos">
+              <span class="price-sticker__top">DESDE</span>
+              <strong class="price-sticker__val">$49</strong>
+              <span class="price-sticker__sub">MXN · 60 g</span>
+            </div>
+
+            <div
+              class="hero-carousel"
+              id="hero-carousel"
+              data-theme="familia"
+              role="region"
+              aria-roledescription="carrusel automático"
+              aria-label="Exhibición automática de productos NUTICRIPS"
+            >
+              <div class="hero-slide hero-slide--familia is-active" data-flavor-theme="familia" data-slide-title="Portafolio Completo · 4 Variedades" data-slide-sub="Mix Tropical, Manzana Canela, Verduras Mix y Plátano Natural">
+                <img src="./assets/portafolio-nuticrips.jpg" alt="" class="hero-slide__bg" aria-hidden="true">
+                <img
+                  src="./assets/portafolio-nuticrips.jpg"
+                  alt="Línea completa NatuCrisp de 4 variedades en bolsas kraft de 60 g"
+                  class="hero-slide__img hero-slide__img--wide"
+                  width="1400"
+                  height="594"
+                  fetchpriority="high"
+                >
+              </div>
+              <div class="hero-slide hero-slide--tropical" data-flavor-theme="tropical" data-slide-title="Mix Tropical · 60 g" data-slide-sub="Plátano, piña, mango y fresa deshidratados">
+                <img src="./assets/sabor-mix-tropical.jpg" alt="" class="hero-slide__bg" aria-hidden="true">
+                <img
+                  src="./assets/sabor-mix-tropical.jpg"
+                  alt="Bolsa NatuCrisp Mix Tropical de 60 g"
+                  class="hero-slide__img"
+                  width="405"
+                  height="616"
+                >
+              </div>
+              <div class="hero-slide hero-slide--manzana" data-flavor-theme="manzana" data-slide-title="Manzana Canela · 60 g" data-slide-sub="Láminas crujientes de manzana roja con canela natural">
+                <img src="./assets/sabor-manzana-canela.jpg" alt="" class="hero-slide__bg" aria-hidden="true">
+                <img
+                  src="./assets/sabor-manzana-canela.jpg"
+                  alt="Bolsa NatuCrisp Manzana Canela de 60 g"
+                  class="hero-slide__img"
+                  width="405"
+                  height="616"
+                >
+              </div>
+              <div class="hero-slide hero-slide--verduras" data-flavor-theme="verduras" data-slide-title="Verduras Mix · 60 g" data-slide-sub="Rodajas crujientes de zanahoria, betabel y calabaza">
+                <img src="./assets/sabor-verduras-mix.jpg" alt="" class="hero-slide__bg" aria-hidden="true">
+                <img
+                  src="./assets/sabor-verduras-mix.jpg"
+                  alt="Bolsa NatuCrisp Verduras Mix de 60 g"
+                  class="hero-slide__img"
+                  width="385"
+                  height="612"
+                >
+              </div>
+              <div class="hero-slide hero-slide--platano" data-flavor-theme="platano" data-slide-title="Plátano Natural · 60 g" data-slide-sub="100% rodajas doradas de plátano deshidratado">
+                <img src="./assets/sabor-platano-natural.jpg" alt="" class="hero-slide__bg" aria-hidden="true">
+                <img
+                  src="./assets/sabor-platano-natural.jpg"
+                  alt="Bolsa NatuCrisp Plátano Natural de 60 g"
+                  class="hero-slide__img"
+                  width="412"
+                  height="606"
+                >
+              </div>
+              <div class="hero-carousel__gloss" aria-hidden="true"></div>
+            </div>
+
+            <!-- Indicador automático de progreso por diapositiva -->
+            <div class="carousel-progress" id="carousel-progress" aria-hidden="true">
+              <span class="carousel-progress__seg is-active"><i></i></span>
+              <span class="carousel-progress__seg"><i></i></span>
+              <span class="carousel-progress__seg"><i></i></span>
+              <span class="carousel-progress__seg"><i></i></span>
+              <span class="carousel-progress__seg"><i></i></span>
+            </div>
+          </div>
+
+          <div class="hero-float-note">
+            <div class="hero-float-note__stars" aria-hidden="true">★★★★★</div>
+            <div>
+              <strong id="hero-note-title">Portafolio Completo · 4 Variedades</strong>
+              <span id="hero-note-sub">Mix Tropical, Manzana Canela, Verduras Mix y Plátano Natural</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CINTA MARQUEE DE SABORES Y ATRIBUTOS -->
+    <div class="flavor-ribbon" aria-label="Sabores y valores NUTICRIPS">
+      <div class="flavor-ribbon__track">
+        <span class="flavor-ribbon__item">MIX TROPICAL <i class="ribbon-dot ribbon-dot--red" aria-hidden="true"></i></span>
+        <span class="flavor-ribbon__item">MANZANA CANELA <i class="ribbon-dot ribbon-dot--gold" aria-hidden="true"></i></span>
+        <span class="flavor-ribbon__item">VERDURAS MIX <i class="ribbon-dot ribbon-dot--sage" aria-hidden="true"></i></span>
+        <span class="flavor-ribbon__item">PLÁTANO NATURAL <i class="ribbon-dot ribbon-dot--red" aria-hidden="true"></i></span>
+        <span class="flavor-ribbon__item">SNACKS NATURALES, GRANDES MOMENTOS <i class="ribbon-dot ribbon-dot--gold" aria-hidden="true"></i></span>
+        <span class="flavor-ribbon__item">HECHO EN TEXCOCO · BOLSA 60 G <i class="ribbon-dot ribbon-dot--sage" aria-hidden="true"></i></span>
+        <span class="flavor-ribbon__item" aria-hidden="true">MIX TROPICAL <i class="ribbon-dot ribbon-dot--red"></i></span>
+        <span class="flavor-ribbon__item" aria-hidden="true">MANZANA CANELA <i class="ribbon-dot ribbon-dot--gold"></i></span>
+        <span class="flavor-ribbon__item" aria-hidden="true">VERDURAS MIX <i class="ribbon-dot ribbon-dot--sage"></i></span>
+        <span class="flavor-ribbon__item" aria-hidden="true">PLÁTANO NATURAL <i class="ribbon-dot ribbon-dot--red"></i></span>
+        <span class="flavor-ribbon__item" aria-hidden="true">SNACKS NATURALES, GRANDES MOMENTOS <i class="ribbon-dot ribbon-dot--gold"></i></span>
+        <span class="flavor-ribbon__item" aria-hidden="true">HECHO EN TEXCOCO · BOLSA 60 G <i class="ribbon-dot ribbon-dot--sage"></i></span>
+      </div>
+    </div>
+
+    <!-- 2. EMPRESA: IDENTIDAD CORPORATIVA, MARCA Y SISTEMA VISUAL -->
+    <section class="section" id="empresa">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow eyebrow--crimson">Quiénes Somos · Identidad Corporativa</span>
+          <h2 class="section-title">Empresa: NUTICRIPS, S.A. de C.V.</h2>
+          <p class="section-subtitle">
+            Una marca mexicana de snacks deshidratados enfocada en sabor auténtico, trazabilidad por lote y diseño comercial contemporáneo.
+          </p>
+        </div>
+
+        <div class="story-bento">
+          <div class="story-panel reveal">
+            <span class="eyebrow">NUTICRIPS, S.A. de C.V. · Marca NatuCrisp®</span>
+            <h3>Del campo regional a tu mochila, sin rodeos</h3>
+            <p>
+              <strong>NUTICRIPS</strong> es la denominación corporativa del proyecto y <strong>NatuCrisp®</strong> («Snacks naturales, grandes momentos») es nuestra firma comercial. Diseñamos botanas crujientes de frutas y verduras deshidratadas para adultos de <strong>20 a 45 años</strong> que buscan colaciones portátiles para escuela, trabajo, gimnasio o traslados, así como tiendas y cafeterías de Texcoco.
+            </p>
+            <p class="story-panel__p2">
+              Nuestro modelo articula abastecimiento regional, control sanitario <strong>NOM-251-SSA1-2009</strong>, etiquetado claro <strong>NOM-051</strong> y un programa de recompra <strong>NUTICRIPS Contigo</strong>.
+            </p>
+            <div class="story-stats">
+              <div>
+                <strong>20–45 años</strong>
+                <span>Público prioritario</span>
+              </div>
+              <div>
+                <strong>12,000</strong>
+                <span>Meta mensual (bolsas)</span>
+              </div>
+              <div>
+                <strong>500 m²</strong>
+                <span>Planta proyectada</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="brand-bento reveal" style="--delay: 80ms;">
+            <figure class="bento-photo bento-photo--wide">
+              <img src="./assets/fachada-nuticrips.jpg" alt="Aplicación conceptual de NatuCrisp en fachada comercial" width="1000" height="760">
+              <figcaption><strong>Punto de Venta:</strong> Fachada conceptual NatuCrisp</figcaption>
+            </figure>
+            <figure class="bento-photo">
+              <img src="./assets/logo-natucrisp-negativo.jpg" alt="Logotipo oficial NatuCrisp en versión negativa sobre verde bosque" width="900" height="704">
+              <figcaption><strong>Marca Negativa</strong></figcaption>
+            </figure>
+            <figure class="bento-photo">
+              <img src="./assets/transporte-distribucion.jpg" alt="Unidad de distribución oficial NatuCrisp" width="1000" height="913">
+              <figcaption><strong>Flota de Reparto</strong></figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="identity-strip reveal">
+          <div class="identity-strip__head">
+            <h3>Sistema Visual Oficial (Paleta + Tipografía)</h3>
+            <span class="identity-strip__hint">Clic en cualquier tono para copiar HEX · Fuentes: <strong>Nunito ExtraBold</strong> + <strong>Montserrat</strong></span>
+          </div>
+          <div class="swatches-row" aria-label="Paleta de colores NUTICRIPS">
+            <button type="button" class="mini-swatch" data-copy-hex="#124B2C">
+              <span class="mini-swatch__dot" style="background: #124B2C;"></span>
+              <strong>#124B2C</strong><small>Verde bosque</small>
+            </button>
+            <button type="button" class="mini-swatch" data-copy-hex="#1E6A3C">
+              <span class="mini-swatch__dot" style="background: #1E6A3C;"></span>
+              <strong>#1E6A3C</strong><small>Verde hoja</small>
+            </button>
+            <button type="button" class="mini-swatch" data-copy-hex="#C2DC97">
+              <span class="mini-swatch__dot" style="background: #C2DC97;"></span>
+              <strong>#C2DC97</strong><small>Verde claro</small>
+            </button>
+            <button type="button" class="mini-swatch" data-copy-hex="#F9F7E6">
+              <span class="mini-swatch__dot" style="background: #F9F7E6;"></span>
+              <strong>#F9F7E6</strong><small>Crema natural</small>
+            </button>
+            <button type="button" class="mini-swatch" data-copy-hex="#E9C94A">
+              <span class="mini-swatch__dot" style="background: #E9C94A;"></span>
+              <strong>#E9C94A</strong><small>Amarillo fruta</small>
+            </button>
+            <button type="button" class="mini-swatch mini-swatch--crimson" data-copy-hex="#C8282E">
+              <span class="mini-swatch__dot" style="background: #C8282E;"></span>
+              <strong>#C8282E</strong><small>Rojo fruto</small>
+            </button>
+            <button type="button" class="mini-swatch" data-copy-hex="#26352B">
+              <span class="mini-swatch__dot" style="background: #26352B;"></span>
+              <strong>#26352B</strong><small>Texto oscuro</small>
+            </button>
+          </div>
+          <div class="copy-toast" id="copy-toast" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. ANTECEDENTES: ORIGEN Y PROCESO EN PLANTA DE 500 m² -->
+    <section class="section process-section" id="antecedentes">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">Origen y Estudio Técnico · Cap. 1 &amp; 6</span>
+          <h2 class="section-title">Antecedentes y Operación en Texcoco</h2>
+          <p class="section-subtitle">
+            Nacido en la Universidad Politécnica de Texcoco (Grupo 7MA1) como modelo integral de planta de 500 m² con 14 etapas controladas en 63 metros y 330 minutos.
+          </p>
+        </div>
+
+        <div class="process-steps">
+          <article class="step-card reveal">
+            <span class="step-card__num">01</span>
+            <h3>Abastecimiento Regional</h3>
+            <p>Evaluación multicriterio (CEDA CDMX, CEDA Ecatepec y Texcoco) hacia nuestra sede propuesta en Carretera Lechería–Texcoco.</p>
+          </article>
+          <article class="step-card reveal" style="--delay: 60ms;">
+            <span class="step-card__num">02</span>
+            <h3>Lavado y Corte Uniforme</h3>
+            <p>Desinfección validada y laminado parejo de fruta y verdura fresca bajo buenas prácticas de higiene NOM-251-SSA1-2009.</p>
+          </article>
+          <article class="step-card reveal" style="--delay: 120ms;">
+            <span class="step-card__num">03</span>
+            <h3>Deshidratado 180 min</h3>
+            <p>Secado controlado por lotes en cámaras de deshidratación con enfriado protegido para concentrar sabor sin frituras pesadas.</p>
+          </article>
+          <article class="step-card reveal" style="--delay: 180ms;">
+            <span class="step-card__num">04</span>
+            <h3>Escala MPS y Lote</h3>
+            <p>Pesaje de 60 g, sello hermético y control MPS/MRP/ERP proyectado para 480 bolsas diarias (12,000 mensuales).</p>
+          </article>
+        </div>
+
+        <div class="plant-showcase">
+          <figure class="plant-card reveal">
+            <img src="./assets/planta-exterior.jpg" alt="Exterior conceptual de la planta NUTICRIPS de 500 m² en Texcoco" width="1200" height="675">
+            <figcaption>
+              <strong>Sede Texcoco (500 m²)</strong>
+              <span>Corredor Carretera Lechería–Texcoco, Los Reyes San Salvador</span>
+            </figcaption>
+          </figure>
+          <figure class="plant-card reveal" style="--delay: 70ms;">
+            <img src="./assets/planta-interior.jpg" alt="Distribución interior y flujo sanitario de la planta NUTICRIPS" width="1200" height="675">
+            <figcaption>
+              <strong>Layout Higiénico</strong>
+              <span>Flujos segregados, cámaras de secado y almacén controlado</span>
+            </figcaption>
+          </figure>
+          <figure class="plant-card reveal" style="--delay: 140ms;">
+            <img src="./assets/planta-produccion.jpg" alt="Pesaje de fruta deshidratada y envasado en bolsas kraft NUTICRIPS" width="1200" height="675">
+            <figcaption>
+              <strong>Control BOM y Envasado</strong>
+              <span>Lotes identificados de 24 a 600 bolsas con trazabilidad completa</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. MISIÓN, VISIÓN Y 6 VALORES CORPORATIVOS -->
+    <section class="section mv-section" id="mision-vision">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow eyebrow--crimson">Filosofía Institucional · Cap. 5.2</span>
+          <h2 class="section-title">Misión, Visión y Valores</h2>
+          <p class="section-subtitle">
+            Los pilares que definen cada decisión productiva, comercial y de servicio en NUTICRIPS, S.A. de C.V.
+          </p>
+        </div>
+
+        <div class="mv-grid">
+          <article class="mv-feature mv-feature--forest reveal">
+            <span class="eyebrow eyebrow--gold">Nuestra Misión</span>
+            <h3>Calidad vegetal práctica para cada momento</h3>
+            <p>
+              «Elaborar snacks de origen vegetal con estándares definidos de calidad, selección y conservación de materias primas, para ofrecer una opción de consumo práctica, agradable y adecuada a diferentes momentos del día.»
+            </p>
+          </article>
+
+          <article class="mv-feature mv-feature--crimson reveal" style="--delay: 80ms;">
+            <span class="eyebrow eyebrow--gold">Nuestra Visión</span>
+            <h3>Referente mexicano en fruta y verdura deshidratada</h3>
+            <p>
+              «Consolidar a NUTICRIPS como una marca mexicana reconocible en la categoría de frutas y verduras deshidratadas por su consistencia de producto, innovación, servicio y comunicación responsable.»
+            </p>
+          </article>
+        </div>
+
+        <div class="values-banner reveal">
+          <div class="values-banner__head">
+            <h3>Nuestros 6 Valores Corporativos</h3>
+            <span>Traducidos en registros de lote, control de mermas y cercanía real con el cliente.</span>
+          </div>
+          <div class="values-six-grid">
+            <div class="val-chip"><strong>1. Calidad en cada producto</strong><span>Selección rigurosa de materia prima y verificación por lote.</span></div>
+            <div class="val-chip"><strong>2. Salud y bienestar</strong><span>Origen vegetal honesto e información nutricional clara.</span></div>
+            <div class="val-chip"><strong>3. Sustentabilidad</strong><span>Medición de mermas y respeto activo al medio ambiente.</span></div>
+            <div class="val-chip"><strong>4. Trabajo en equipo</strong><span>Responsabilidades claras entre las 8 áreas funcionales.</span></div>
+            <div class="val-chip"><strong>5. Innovación constante</strong><span>Pruebas de mejora en mezclas, secado y empaque.</span></div>
+            <div class="val-chip"><strong>6. Compromiso con clientes</strong><span>Atención directa, escucha activa y programa Contigo.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. ORGANIGRAMA EJECUTIVO Y 8 DEPARTAMENTOS -->
+    <section class="section team-section" id="organigrama">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow eyebrow--crimson">Estructura Organizacional · Cap. 7</span>
+          <h2 class="section-title">Organigrama Ejecutivo</h2>
+          <p class="section-subtitle">
+            Tres socios fundadores al frente de una estructura proyectada de 8 departamentos y 49 plazas especializadas.
+          </p>
+        </div>
+
+        <div class="leaders-grid">
+          <article class="leader-card leader-card--ceo reveal">
+            <div class="leader-card__media">
+              <span class="leader-badge leader-badge--crimson">Directora General</span>
+              <img src="./assets/equipo-fatima.jpg" alt="Fátima Yatzire Méndez Robledo — Directora General de NUTICRIPS" width="600" height="963">
+            </div>
+            <div class="leader-card__info">
+              <span class="leader-card__sub">Dirección Ejecutiva · Socia Fundadora</span>
+              <h3>Fátima Yatzire Méndez Robledo</h3>
+              <p>
+                Lidera la dirección estratégica, la autorización de presupuestos, la evaluación de resultados y la supervisión integral de ambas subdirecciones.
+              </p>
+              <div class="leader-tags">
+                <span>Dirección Estratégica</span>
+                <span>Gobierno Corporativo</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="leader-card reveal" style="--delay: 70ms;">
+            <div class="leader-card__media">
+              <span class="leader-badge leader-badge--forest">Operaciones y Producción</span>
+              <img src="./assets/equipo-leonardo.jpg" alt="Leonardo Moreno Rivera — Subdirector de Operaciones y Producción" width="600" height="626">
+            </div>
+            <div class="leader-card__info">
+              <span class="leader-card__sub">Subdirector · 5 Departamentos Operativos</span>
+              <h3>Leonardo Moreno Rivera</h3>
+              <p>
+                Dirige producción por lotes, inocuidad alimentaria, abastecimiento y almacén, logística de reparto y mantenimiento técnico de planta.
+              </p>
+              <div class="leader-tags">
+                <span>Producción</span>
+                <span>Calidad e Inocuidad</span>
+                <span>Almacén</span>
+                <span>Logística</span>
+                <span>Mantenimiento</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="leader-card reveal" style="--delay: 140ms;">
+            <div class="leader-card__media">
+              <span class="leader-badge leader-badge--gold">Administración y Comercial</span>
+              <img src="./assets/equipo-yaretzi.jpg" alt="Yaretzi Paola Guzmán Clavijo — Subdirectora de Administración y Comercial" width="600" height="793">
+            </div>
+            <div class="leader-card__info">
+              <span class="leader-card__sub">Subdirectora · 3 Departamentos Corporativos</span>
+              <h3>Yaretzi Paola Guzmán Clavijo</h3>
+              <p>
+                Encabeza estrategia comercial y ventas, finanzas y contabilidad, desarrollo de competencias del personal y el club NUTICRIPS Contigo.
+              </p>
+              <div class="leader-tags">
+                <span>Comercial y Ventas</span>
+                <span>Finanzas</span>
+                <span>Recursos Humanos</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="dept-drawer-box reveal">
+          <div class="dept-drawer-box__head">
+            <div>
+              <h3>Estructura Departamental Completa (8 Áreas · 49 Plazas Proyectadas)</h3>
+              <p>Despliega los departamentos operativos y administrativos o inspecciona la lámina oficial del organigrama.</p>
+            </div>
+            <div class="dept-drawer-box__actions">
+              <button type="button" class="btn btn--outline-forest btn--sm" id="toggle-depts-btn" aria-expanded="false" aria-controls="depts-collapse">
+                Ver 8 Departamentos
+              </button>
+              <button type="button" class="btn btn--crimson btn--sm" data-open-modal="modal-organigrama">
+                Abrir Organigrama Oficial
+              </button>
+            </div>
+          </div>
+
+          <div class="depts-collapse" id="depts-collapse" hidden>
+            <div class="dept-grid">
+              <div class="dept-card"><h4>1. Producción</h4><p>Jefe, Supervisor, 4 Operadores, Técnico de Calidad en Proceso y 2 Auxiliares.</p></div>
+              <div class="dept-card"><h4>2. Calidad e Inocuidad</h4><p>Jefe de Calidad, Supervisor, 2 Inspectores y Analista de Inocuidad.</p></div>
+              <div class="dept-card"><h4>3. Abastecimiento y Almacén</h4><p>Jefe de Área, Supervisor, 2 Almacenistas, Auxiliar de Inventarios y Recepción.</p></div>
+              <div class="dept-card"><h4>4. Logística y Distribución</h4><p>Jefe de Logística, Supervisor de Reparto, 4 Repartidores y Auxiliar.</p></div>
+              <div class="dept-card"><h4>5. Comercial y Ventas</h4><p>Jefe Comercial, Supervisor de Ventas, 2 Ejecutivos y Atención a Clientes.</p></div>
+              <div class="dept-card"><h4>6. Administración y Finanzas</h4><p>Jefe de Área, Supervisor Administrativo, Contador, Auxiliar Contable y Admin.</p></div>
+              <div class="dept-card"><h4>7. Recursos Humanos</h4><p>Jefe de RH, Supervisor de Capacitación y Desarrollo, Analista de RH y Nómina.</p></div>
+              <div class="dept-card"><h4>8. Sistemas y Mantenimiento</h4><p>Jefe de Mantenimiento y Servicios, Supervisor, 2 Técnicos y Servicios Generales.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. PRODUCTO: CATÁLOGO DE VENTA + CARRITO + PACK + CLUB CONTIGO -->
+    <section class="section shop-section" id="producto">
+      <div class="container">
+        <div class="shop-header reveal">
+          <div>
+            <span class="eyebrow eyebrow--crimson">Tienda Oficial · Presentaciones de 60 g</span>
+            <h2 class="section-title">Nuestros Productos</h2>
+            <p class="section-subtitle">
+              Elige tus bolsas kraft resellables de 60 g, agrégalas al carrito y acumula puntos hacia tu bolsa gratis en <strong>NUTICRIPS Contigo</strong>.
+            </p>
+          </div>
+
+          <div class="shop-controls">
+            <div class="shop-filters" role="tablist" aria-label="Filtrar snacks por categoría">
+              <button type="button" class="filter-chip is-active" role="tab" aria-selected="true" data-filter="all">Todos</button>
+              <button type="button" class="filter-chip" role="tab" aria-selected="false" data-filter="frutas">Frutas</button>
+              <button type="button" class="filter-chip" role="tab" aria-selected="false" data-filter="verduras">Verduras</button>
+              <button type="button" class="filter-chip" role="tab" aria-selected="false" data-filter="packs">Packs</button>
+            </div>
+            <button type="button" class="btn btn--crimson btn--sm shop-cart-trigger" id="shop-open-cart-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              <span>Ver Carrito (<strong id="shop-cart-count">0</strong>)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Grilla de 4 Variedades Oficiales (Con efecto crujiente de rodajas de fruta, sin plantas) -->
+        <div class="product-catalog" id="product-catalog">
+          <article class="sku-card sku-card--tropical reveal" data-category="frutas">
+            <div class="sku-card__media">
+              <span class="sku-badge sku-badge--crimson">Más Vendido</span>
+              <span class="sku-weight">60 g</span>
+              <div class="sku-card__shine" aria-hidden="true"></div>
+              <img
+                src="./assets/sabor-mix-tropical.jpg"
+                alt="Bolsa NatuCrisp Mix Tropical 60 g — Plátano, piña, mango y fresa"
+                class="sku-card__img"
+                width="405"
+                height="616"
+              >
+            </div>
+            <div class="sku-card__body">
+              <div class="sku-card__meta">
+                <span class="sku-cat">Fruta Deshidratada</span>
+                <span class="sku-pts">+4 pts Contigo</span>
+              </div>
+              <h3 class="sku-card__title">Mix Tropical</h3>
+              <p class="sku-card__ingredients">Plátano · Piña · Mango · Fresa</p>
+              <p class="sku-card__desc">
+                Combinación vibrante y aromática de cuatro frutas tropicales seleccionadas con dulzor natural y textura crujiente.
+              </p>
+              <div class="sku-card__price-row">
+                <div>
+                  <strong class="sku-price">$49 MXN</strong>
+                  <span class="sku-unit">Bolsa kraft 60 g</span>
+                </div>
+                <button type="button" class="sku-info-btn" data-quick-view="tropical">Ver ficha</button>
+              </div>
+              <button type="button" class="btn btn--forest btn--full sku-add-btn" data-add-to-cart="tropical">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+                <span>Agregar al carrito</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="sku-card sku-card--manzana reveal" data-category="frutas" style="--delay: 60ms;">
+            <div class="sku-card__media">
+              <span class="sku-badge sku-badge--crimson">Toque Canela</span>
+              <span class="sku-weight">60 g</span>
+              <div class="sku-card__shine" aria-hidden="true"></div>
+              <img
+                src="./assets/sabor-manzana-canela.jpg"
+                alt="Bolsa NatuCrisp Manzana Canela 60 g — Manzana crujiente con canela"
+                class="sku-card__img"
+                width="405"
+                height="616"
+              >
+            </div>
+            <div class="sku-card__body">
+              <div class="sku-card__meta">
+                <span class="sku-cat">Fruta Aromática</span>
+                <span class="sku-pts">+4 pts Contigo</span>
+              </div>
+              <h3 class="sku-card__title">Manzana Canela</h3>
+              <p class="sku-card__ingredients">Manzana fresca · Canela natural</p>
+              <p class="sku-card__desc">
+                Láminas finas de manzana roja con un sazonado equilibrado de canela. Ligero, reconfortante e ideal con tu café.
+              </p>
+              <div class="sku-card__price-row">
+                <div>
+                  <strong class="sku-price">$49 MXN</strong>
+                  <span class="sku-unit">Bolsa kraft 60 g</span>
+                </div>
+                <button type="button" class="sku-info-btn" data-quick-view="manzana">Ver ficha</button>
+              </div>
+              <button type="button" class="btn btn--crimson btn--full sku-add-btn" data-add-to-cart="manzana">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+                <span>Agregar al carrito</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="sku-card sku-card--verduras reveal" data-category="verduras" style="--delay: 120ms;">
+            <div class="sku-card__media">
+              <span class="sku-badge sku-badge--forest">Opción Salada</span>
+              <span class="sku-weight">60 g</span>
+              <div class="sku-card__shine" aria-hidden="true"></div>
+              <img
+                src="./assets/sabor-verduras-mix.jpg"
+                alt="Bolsa NatuCrisp Verduras Mix 60 g — Zanahoria, betabel y calabaza"
+                class="sku-card__img"
+                width="385"
+                height="612"
+              >
+            </div>
+            <div class="sku-card__body">
+              <div class="sku-card__meta">
+                <span class="sku-cat">Botana Vegetal</span>
+                <span class="sku-pts">+4 pts Contigo</span>
+              </div>
+              <h3 class="sku-card__title">Verduras Mix</h3>
+              <p class="sku-card__ingredients">Zanahoria · Betabel · Calabaza</p>
+              <p class="sku-card__desc">
+                Rodajas coloridas de hortalizas deshidratadas que conservan sus pigmentos naturales, fibra y un crujido adictivo.
+              </p>
+              <div class="sku-card__price-row">
+                <div>
+                  <strong class="sku-price">$49 MXN</strong>
+                  <span class="sku-unit">Bolsa kraft 60 g</span>
+                </div>
+                <button type="button" class="sku-info-btn" data-quick-view="verduras">Ver ficha</button>
+              </div>
+              <button type="button" class="btn btn--forest btn--full sku-add-btn" data-add-to-cart="verduras">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+                <span>Agregar al carrito</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="sku-card sku-card--platano reveal" data-category="frutas" style="--delay: 180ms;">
+            <div class="sku-card__media">
+              <span class="sku-badge sku-badge--gold">1 Ingrediente</span>
+              <span class="sku-weight">60 g</span>
+              <div class="sku-card__shine" aria-hidden="true"></div>
+              <img
+                src="./assets/sabor-platano-natural.jpg"
+                alt="Bolsa NatuCrisp Plátano Natural 60 g — Rodajas de plátano deshidratado"
+                class="sku-card__img"
+                width="412"
+                height="606"
+              >
+            </div>
+            <div class="sku-card__body">
+              <div class="sku-card__meta">
+                <span class="sku-cat">Energía Portátil</span>
+                <span class="sku-pts">+4 pts Contigo</span>
+              </div>
+              <h3 class="sku-card__title">Plátano Natural</h3>
+              <p class="sku-card__ingredients">100% Plátano seleccionado</p>
+              <p class="sku-card__desc">
+                Rodajas doradas y crujientes de plátano en su punto exacto de madurez. Pureza clásica para escuela, oficina o gimnasio.
+              </p>
+              <div class="sku-card__price-row">
+                <div>
+                  <strong class="sku-price">$49 MXN</strong>
+                  <span class="sku-unit">Bolsa kraft 60 g</span>
+                </div>
+                <button type="button" class="sku-info-btn" data-quick-view="platano">Ver ficha</button>
+              </div>
+              <button type="button" class="btn btn--forest btn--full sku-add-btn" data-add-to-cart="platano">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+                <span>Agregar al carrito</span>
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Pack Degustación Panorámico (Foto amplia y limpia sin amontonamiento) -->
+        <article class="bundle-banner reveal" data-category="packs" id="bundle-pack">
+          <div class="bundle-banner__media">
+            <img
+              src="./assets/portafolio-nuticrips.jpg"
+              alt="Pack Degustación NUTICRIPS con las 4 bolsas de 60 g: Mix Tropical, Manzana Canela, Verduras Mix y Plátano Natural"
+              width="1400"
+              height="594"
+            >
+          </div>
+          <div class="bundle-banner__content">
+            <div class="bundle-banner__top-tags">
+              <span class="sku-badge sku-badge--inline sku-badge--crimson">PACK DEGUSTACIÓN · AHORRA $11 MXN</span>
+              <span class="eyebrow">Combo Especial · 240 g totales</span>
+            </div>
+            <h3>Pack «4 Grandes Momentos»</h3>
+            <p>
+              Llévate <strong>1 bolsa de cada variedad</strong> (Mix Tropical, Manzana Canela, Verduras Mix y Plátano Natural) con cierre resellable y trazabilidad por lote.
+            </p>
+            <ul class="bundle-banner__list">
+              <li>4 bolsas individuales de 60 g listas para compartir</li>
+              <li>Acumula <strong>18 puntos</strong> en NUTICRIPS Contigo (50 pts = 1 bolsa gratis)</li>
+              <li>Ideal para probar toda la línea o surtir tu semana</li>
+            </ul>
+            <div class="bundle-banner__buy">
+              <div class="bundle-price">
+                <span class="bundle-price__old">$196 MXN</span>
+                <strong class="bundle-price__now">$185 MXN</strong>
+              </div>
+              <button type="button" class="btn btn--crimson btn--lg" data-add-to-cart="pack">
+                Agregar Pack al Carrito
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Barra interactiva del Club NUTICRIPS Contigo -->
+        <div class="loyalty-bar-card reveal">
+          <div class="loyalty-bar-card__info">
+            <span class="eyebrow eyebrow--gold">Programa Piloto 90 días · NUTICRIPS Contigo</span>
+            <h3>Simula tus puntos hacia una bolsa gratis</h3>
+            <p>Por cada <strong>$10 MXN</strong> de compra obtienes <strong>1 punto</strong>. Al completar <strong>50 puntos</strong> canjeas <strong>1 bolsa de 60 g gratis</strong> mediante código QR.</p>
+          </div>
+          <div class="loyalty-sim">
+            <div class="loyalty-sim__head">
+              <label for="sim-bags" class="loyalty-sim__label">
+                Compras estimadas: <strong id="sim-bags-out">6 bolsas ($294 MXN)</strong>
+              </label>
+              <span class="loyalty-sim__pts" id="sim-pts-out">29 / 50 pts</span>
+            </div>
+            <input type="range" id="sim-bags" class="loyalty-slider" min="1" max="12" value="6" aria-label="Cantidad de bolsas para simular puntos">
+            <div class="loyalty-track" aria-hidden="true">
+              <div class="loyalty-track__fill" id="sim-bar-fill" style="width: 58%;"></div>
+            </div>
+            <div class="loyalty-sim__foot">
+              <span id="sim-status-msg">Te faltan <strong>21 puntos</strong> para desbloquear tu bolsa gratis de 60 g.</span>
+              <span class="loyalty-sim__badge" id="sim-reward-pill">En camino</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. ¿DE QUÉ ESTÁ HECHO? (COMPOSICIÓN, INGREDIENTES Y BOM) -->
+    <section class="section ingredients-section" id="de-que-esta-hecho">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow eyebrow--gold">Ingredientes Reales y Lista de Materiales (BOM) · Cap. 5.1 &amp; 6.10</span>
+          <h2 class="section-title ingredients-title">¿De qué está hecho cada snack?</h2>
+          <p class="section-subtitle ingredients-subtitle">
+            Selecciona una variedad o nuestro empaque kraft para conocer exactamente los ingredientes, el proceso de deshidratación y los puntos de control por lote.
+          </p>
+        </div>
+
+        <div class="ing-explorer reveal">
+          <div class="ing-tabs" role="tablist" aria-label="Inspeccionar ingredientes de cada variedad">
+            <button type="button" class="ing-tab is-active" role="tab" aria-selected="true" data-ing="tropical">
+              <span class="ing-tab__dot" style="background: #E9C94A;"></span>
+              <div>
+                <strong>1. Mix Tropical</strong>
+                <small>Plátano, piña, mango y fresa</small>
+              </div>
+              <span class="ing-tab__tag">60 g</span>
+            </button>
+            <button type="button" class="ing-tab" role="tab" aria-selected="false" data-ing="manzana">
+              <span class="ing-tab__dot" style="background: #C8282E;"></span>
+              <div>
+                <strong>2. Manzana Canela</strong>
+                <small>Manzana fresca y canela natural</small>
+              </div>
+              <span class="ing-tab__tag">60 g</span>
+            </button>
+            <button type="button" class="ing-tab" role="tab" aria-selected="false" data-ing="verduras">
+              <span class="ing-tab__dot" style="background: #EA580C;"></span>
+              <div>
+                <strong>3. Verduras Mix</strong>
+                <small>Zanahoria, betabel y calabaza</small>
+              </div>
+              <span class="ing-tab__tag">60 g</span>
+            </button>
+            <button type="button" class="ing-tab" role="tab" aria-selected="false" data-ing="platano">
+              <span class="ing-tab__dot" style="background: #FACC15;"></span>
+              <div>
+                <strong>4. Plátano Natural</strong>
+                <small>100% plátano seleccionado</small>
+              </div>
+              <span class="ing-tab__tag">60 g</span>
+            </button>
+            <button type="button" class="ing-tab" role="tab" aria-selected="false" data-ing="empaque">
+              <span class="ing-tab__dot" style="background: #C2DC97;"></span>
+              <div>
+                <strong>5. Empaque Kraft y BOM</strong>
+                <small>Bolsa barrera, sello y etiqueta NOM-051</small>
+              </div>
+              <span class="ing-tab__tag">Lote 600</span>
+            </button>
+          </div>
+
+          <div class="ing-panel" role="tabpanel" aria-live="polite">
+            <div class="ing-panel__top">
+              <img
+                src="./assets/sabor-mix-tropical.jpg"
+                alt="Mix Tropical — Ingredientes"
+                class="ing-panel__img"
+                id="ing-img"
+                width="180"
+                height="240"
+              >
+              <div>
+                <span class="eyebrow eyebrow--crimson" id="ing-badge">Fruta 100% Deshidratada</span>
+                <h3 id="ing-title">Mix Tropical — Plátano, Piña, Mango y Fresa</h3>
+                <p class="ing-panel__desc" id="ing-desc">
+                  Cuatro frutas frescas lavadas, desinfectadas y rebanadas con grosor homogéneo antes del secado controlado en cámara (referencia de 180 min). Concentra aroma y dulzor natural sin frituras pesadas.
+                </p>
+                <div class="ing-panel__chips" id="ing-chips">
+                  <span>Plátano fresco</span>
+                  <span>Piña dorada</span>
+                  <span>Mango seleccionado</span>
+                  <span>Fresa natural</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="ing-panel__bom" id="ing-bom">
+              <strong>Control BOM (Cap. 6.10):</strong> Peso neto objetivo 60 g por bolsa, verificación de actividad de agua, sellado hermético y trazabilidad de lote NOM-251 / NOM-051.
+            </div>
+
+            <div class="ing-bars" id="ing-bars">
+              <div>
+                <div class="qv-bar__head"><span>Pureza de Fruta Real</span><span>100%</span></div>
+                <div class="qv-bar__track"><div class="qv-bar__fill" style="width: 100%"></div></div>
+              </div>
+              <div>
+                <div class="qv-bar__head"><span>Textura Crujiente sin Fritura Pesada</span><span>96%</span></div>
+                <div class="qv-bar__track"><div class="qv-bar__fill" style="width: 96%"></div></div>
+              </div>
+              <div>
+                <div class="qv-bar__head"><span>Conservación en Bolsa Resellable</span><span>97%</span></div>
+                <div class="qv-bar__track"><div class="qv-bar__fill" style="width: 97%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. OPINIONES: FORMULARIO AMIGABLE CON ANIMACIONES FLUIDAS -->
+    <section class="section opinions-section" id="opiniones">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow eyebrow--crimson">Tu Voz nos Impulsa · Buzón Interactivo</span>
+          <h2 class="section-title">Opiniones y Sugerencias</h2>
+          <p class="section-subtitle">
+            Cuéntanos qué variedad te emociona más, solicita una degustación piloto o envíanos tu pedido y sugerencias con un toque.
+          </p>
+        </div>
+
+        <div class="opinions-layout">
+          <aside class="opinions-aside reveal">
+            <div class="campaign-card">
+              <img src="./assets/campana-natural.jpg" alt="Campaña NatuCrisp: Lo natural también se disfruta" width="1000" height="580">
+              <div class="campaign-card__body">
+                <span class="eyebrow">Lo natural también se disfruta</span>
+                <h3>Ayúdanos a crear tu próximo snack favorito</h3>
+                <p>
+                  Cada opinión guía nuestras pruebas de corte, sazonado y sabores en Texcoco. Si armaste tu pedido en el carrito, puedes enviarlo directo desde aquí.
+                </p>
+                <div class="campaign-card__meta">
+                  <span><strong>Respuesta cercana:</strong> contacto@nuticrips.mx</span>
+                  <span><strong>Privacidad:</strong> Protegido bajo LFPDPPP</span>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Formulario Amigable con Animaciones Fluidas -->
+          <div class="friendly-form-card reveal" style="--delay: 80ms;" id="friendly-form-wrap">
+            <canvas class="fx-canvas" id="form-fx" aria-hidden="true"></canvas>
+
+            <div class="friendly-form-head">
+              <span class="friendly-form-head__pill">Buzón Rápido · Menos de 30 seg</span>
+              <h3>Déjanos tu opinión o consulta</h3>
+              <p>Selecciona tus preferencias con un clic y valida tus datos al instante.</p>
+            </div>
+
+            <form class="friendly-form" id="nuticrips-feedback-form" novalidate>
+              <div class="hp-field" aria-hidden="true">
+                <label for="website_hp">No llenar este campo</label>
+                <input type="text" id="website_hp" name="website_hp" tabindex="-1" autocomplete="off">
+              </div>
+
+              <fieldset class="choice-fieldset">
+                <legend class="choice-legend">1. ¿Sobre qué nos escribes hoy?</legend>
+                <div class="choice-pills" role="radiogroup">
+                  <label class="choice-pill">
+                    <input type="radio" name="tipo" value="Opinión de sabores" checked>
+                    <span>Opinión de sabores</span>
+                  </label>
+                  <label class="choice-pill">
+                    <input type="radio" name="tipo" value="Quiero probar muestras">
+                    <span>Probar muestras</span>
+                  </label>
+                  <label class="choice-pill">
+                    <input type="radio" name="tipo" value="Pedido o Mayoreo">
+                    <span>Pedido / Mayoreo</span>
+                  </label>
+                  <label class="choice-pill">
+                    <input type="radio" name="tipo" value="Club NUTICRIPS Contigo">
+                    <span>Club Contigo</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <fieldset class="choice-fieldset">
+                <legend class="choice-legend">2. ¿Qué variedad se te antoja más?</legend>
+                <div class="choice-pills choice-pills--flavors" role="radiogroup">
+                  <label class="choice-pill choice-pill--flavor">
+                    <input type="radio" name="sabor" value="Mix Tropical" checked>
+                    <span><i class="flavor-dot" style="background:#1E6A3C"></i>Mix Tropical</span>
+                  </label>
+                  <label class="choice-pill choice-pill--flavor">
+                    <input type="radio" name="sabor" value="Manzana Canela">
+                    <span><i class="flavor-dot" style="background:#C8282E"></i>Manzana Canela</span>
+                  </label>
+                  <label class="choice-pill choice-pill--flavor">
+                    <input type="radio" name="sabor" value="Verduras Mix">
+                    <span><i class="flavor-dot" style="background:#D97706"></i>Verduras Mix</span>
+                  </label>
+                  <label class="choice-pill choice-pill--flavor">
+                    <input type="radio" name="sabor" value="Plátano Natural">
+                    <span><i class="flavor-dot" style="background:#E9C94A"></i>Plátano Natural</span>
+                  </label>
+                  <label class="choice-pill choice-pill--flavor">
+                    <input type="radio" name="sabor" value="Pack 4 Sabores">
+                    <span><i class="flavor-dot" style="background:#124B2C"></i>Los 4 Sabores</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <div class="float-row">
+                <div class="float-field">
+                  <input class="float-field__input" type="text" id="fb-nombre" name="nombre" placeholder=" " required autocomplete="name">
+                  <label class="float-field__label" for="fb-nombre">Tu nombre completo *</label>
+                  <span class="float-field__check" aria-hidden="true">✓</span>
+                  <span class="field-error" id="fb-nombre-error" role="alert"></span>
+                </div>
+
+                <div class="float-field">
+                  <input class="float-field__input" type="email" id="fb-correo" name="correo" placeholder=" " required autocomplete="email">
+                  <label class="float-field__label" for="fb-correo">Tu correo electrónico *</label>
+                  <span class="float-field__check" aria-hidden="true">✓</span>
+                  <span class="field-error" id="fb-correo-error" role="alert"></span>
+                </div>
+              </div>
+
+              <div class="mood-rating">
+                <div class="mood-rating__head">
+                  <span id="rating-label">¿Qué calificación le das a NUTICRIPS?</span>
+                  <span class="mood-pill" id="mood-text">¡Excelente, nos encanta!</span>
+                </div>
+                <div class="star-bar" role="radiogroup" aria-labelledby="rating-label">
+                  <input type="radio" id="star-5" name="calificacion" value="5" checked>
+                  <label for="star-5" title="5 estrellas" aria-label="5 estrellas">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  </label>
+                  <input type="radio" id="star-4" name="calificacion" value="4">
+                  <label for="star-4" title="4 estrellas" aria-label="4 estrellas">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  </label>
+                  <input type="radio" id="star-3" name="calificacion" value="3">
+                  <label for="star-3" title="3 estrellas" aria-label="3 estrellas">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  </label>
+                  <input type="radio" id="star-2" name="calificacion" value="2">
+                  <label for="star-2" title="2 estrellas" aria-label="2 estrellas">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  </label>
+                  <input type="radio" id="star-1" name="calificacion" value="1">
+                  <label for="star-1" title="1 estrella" aria-label="1 estrella">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  </label>
+                </div>
+              </div>
+
+              <div class="float-field float-field--textarea">
+                <textarea class="float-field__input" id="fb-mensaje" name="mensaje" rows="4" maxlength="400" placeholder=" " required></textarea>
+                <label class="float-field__label" for="fb-mensaje">Cuéntanos tu opinión, sugerencia o pedido *</label>
+                <div class="textarea-meta">
+                  <span class="field-error" id="fb-mensaje-error" role="alert"></span>
+                  <span class="char-counter" id="char-counter">0 / 400</span>
+                </div>
+              </div>
+
+              <div class="terms-row">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="fb-terminos" name="terminos" value="1" required>
+                  <span>
+                    Acepto los <a href="#modal-terminos" data-open-modal="modal-terminos">Términos y Condiciones</a> y la <a href="#modal-cookies" data-open-modal="modal-cookies">Política de Privacidad</a> de NUTICRIPS, S.A. de C.V. *
+                  </span>
+                </label>
+                <span class="field-error" id="fb-terminos-error" role="alert"></span>
+              </div>
+
+              <button type="submit" class="btn btn--crimson btn--lg btn--full submit-btn" id="fb-submit-btn">
+                <span>Enviar mi opinión a NUTICRIPS</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+            </form>
+
+            <div class="form-success-card" id="feedback-status" aria-live="polite" hidden>
+              <div class="form-success-card__icon" aria-hidden="true">✓</div>
+              <h4 id="success-title">¡Gracias por tu opinión!</h4>
+              <p id="success-desc">Tu mensaje está listo para enviarse al equipo de NUTICRIPS.</p>
+              <div class="form-success-card__actions">
+                <a href="mailto:contacto@nuticrips.mx" class="btn btn--crimson" id="success-mailto">Abrir correo y enviar ahora</a>
+                <button type="button" class="btn btn--outline-forest" id="reset-form-view">Enviar otra opinión</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. CONTACTO: CANALES DIRECTOS, SEDE EN TEXCOCO Y REDES -->
+    <section class="section contact-section" id="contacto">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow eyebrow--gold">Atención Comercial y Comunidad · Texcoco</span>
+          <h2 class="section-title ingredients-title">Contacto y Canales Oficiales</h2>
+          <p class="section-subtitle ingredients-subtitle">
+            Comunícate directamente con el equipo de NUTICRIPS, S.A. de C.V. para distribución, tiendas locales, muestras y comunidad digital.
+          </p>
+        </div>
+
+        <div class="contact-cards-grid reveal">
+          <div class="contact-channel-card">
+            <span class="contact-mini__ico" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </span>
+            <h3>Correo Corporativo</h3>
+            <p><a href="mailto:contacto@nuticrips.mx">contacto@nuticrips.mx</a></p>
+            <small>Atención a clientes, tiendas y mayoreo.</small>
+          </div>
+
+          <div class="contact-channel-card">
+            <span class="contact-mini__ico" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <h3>Planta Proyectada (500 m²)</h3>
+            <p>Corredor Carretera Lechería–Texcoco, Los Reyes San Salvador</p>
+            <small>Texcoco, Estado de México.</small>
+          </div>
+
+          <div class="contact-channel-card">
+            <span class="contact-mini__ico" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </span>
+            <h3>Horario de Atención</h3>
+            <p>Lunes a Sábado · 9:00 a 19:00 hrs</p>
+            <small>Seguimiento posventa y pedidos piloto.</small>
+          </div>
+        </div>
+
+        <!-- Tarjetas de Redes Sociales Oficiales con Logo y Descripción Afín -->
+        <div class="social-showcase-grid reveal">
+          <a href="#opiniones" class="social-network-card social-network-card--ig" aria-label="Instagram oficial @nuticrips.oficial">
+            <div class="social-network-card__head">
+              <span class="social-logo social-logo--ig" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+              </span>
+              <span class="social-network-card__tag">Instagram</span>
+            </div>
+            <h3 class="social-network-card__handle">@nuticrips.oficial</h3>
+            <p class="social-network-card__desc">
+              Descubre fotos reales de cada lote deshidratado, ideas para combinar tus snacks en bowls o loncheras y los lanzamientos de temporada.
+            </p>
+            <span class="social-network-card__cta">Seguir en Instagram →</span>
+          </a>
+
+          <a href="#opiniones" class="social-network-card social-network-card--tt" aria-label="TikTok oficial @nuticrips.mx">
+            <div class="social-network-card__head">
+              <span class="social-logo social-logo--tt" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+              </span>
+              <span class="social-network-card__tag">TikTok</span>
+            </div>
+            <h3 class="social-network-card__handle">@nuticrips.mx</h3>
+            <p class="social-network-card__desc">
+              Acompáñanos detrás de cámaras en el corte y deshidratación, pruebas de crujido real, retos de sabores y dinámicas con nuestra comunidad en Texcoco.
+            </p>
+            <span class="social-network-card__cta">Ver videos en TikTok →</span>
+          </a>
+
+          <a href="#opiniones" class="social-network-card social-network-card--fb" aria-label="Facebook oficial NUTICRIPS NatuCrisp">
+            <div class="social-network-card__head">
+              <span class="social-logo social-logo--fb" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              </span>
+              <span class="social-network-card__tag">Facebook</span>
+            </div>
+            <h3 class="social-network-card__handle">NUTICRIPS · NatuCrisp</h3>
+            <p class="social-network-card__desc">
+              Entérate de fechas de degustación, puntos de venta locales autorizados, beneficios del programa NUTICRIPS Contigo y noticias de la planta.
+            </p>
+            <span class="social-network-card__cta">Visitar Facebook →</span>
+          </a>
+
+          <a href="#producto" class="social-network-card social-network-card--wa" aria-label="Pedidos Directos y Catálogo Digital NUTICRIPS">
+            <div class="social-network-card__head">
+              <span class="social-logo social-logo--wa" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              </span>
+              <span class="social-network-card__tag">Catálogo y Pedidos</span>
+            </div>
+            <h3 class="social-network-card__handle">Pedidos Directos</h3>
+            <p class="social-network-card__desc">
+              Arma tu paquete de 60 g en el carrito o cotiza entregas para cafeterías, tiendas escolares y distribuidores locales en Texcoco.
+            </p>
+            <span class="social-network-card__cta">Ir al Catálogo y Carrito →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER TIENDA OFICIAL -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <img
+            src="./assets/logo-natucrisp-negativo.jpg"
+            alt="Logotipo NatuCrisp en versión negativa"
+            class="footer-logo"
+            width="150"
+            height="117"
+          >
+          <p class="footer-desc">
+            <strong>NUTICRIPS, S.A. de C.V.</strong> — Botanas de frutas y verduras deshidratadas en bolsas resellables de 60 g. «Snacks naturales, grandes momentos.»
+          </p>
+          <p class="footer-meta">Universidad Politécnica de Texcoco · Grupo 7MA1 · Texcoco, Edo. Méx.</p>
+        </div>
+
+        <div>
+          <h3 class="footer-title">Secciones</h3>
+          <ul class="footer-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#empresa">Empresa</a></li>
+            <li><a href="#antecedentes">Antecedentes</a></li>
+            <li><a href="#mision-vision">Misión y Visión</a></li>
+            <li><a href="#organigrama">Organigrama</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-title">Productos y Comunidad</h3>
+          <ul class="footer-links">
+            <li><a href="#producto">Producto y Carrito</a></li>
+            <li><a href="#de-que-esta-hecho">¿De qué está hecho?</a></li>
+            <li><a href="#bundle-pack">Pack 4 Sabores ($185)</a></li>
+            <li><a href="#opiniones">Opiniones y Sugerencias</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-title">Legal y Privacidad</h3>
+          <ul class="footer-links">
+            <li><button type="button" class="footer-link-btn" data-open-modal="modal-terminos">Términos y Condiciones</button></li>
+            <li><button type="button" class="footer-link-btn" data-open-modal="modal-cookies">Política de Cookies y Privacidad</button></li>
+            <li><button type="button" class="footer-link-btn" id="reopen-cookie-banner">Preferencias de Cookies</button></li>
+          </ul>
+          <p class="footer-note">Diseñado bajo lineamientos NOM-251-SSA1-2009 y NOM-051-SCFI/SSA1-2010.</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="copyright-year">2026</span> NUTICRIPS, S.A. de C.V. Todos los derechos reservados.</span>
+        <span>Salud, sabor y bienestar en cada bocado.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DRAWER LATERAL: CARRITO DE PEDIDO -->
+  <div class="drawer-backdrop" id="cart-backdrop" aria-hidden="true"></div>
+  <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-drawer-title" aria-hidden="true">
+    <div class="cart-drawer__head">
+      <div>
+        <h3 id="cart-drawer-title">Tu Carrito NUTICRIPS</h3>
+        <span class="cart-drawer__sub">Precios de referencia · Bolsas de 60 g</span>
+      </div>
+      <button type="button" class="modal-close" id="close-cart-btn" aria-label="Cerrar carrito">✕</button>
+    </div>
+
+    <div class="cart-loyalty-bar">
+      <div class="cart-loyalty-bar__row">
+        <span>Puntos NUTICRIPS Contigo</span>
+        <strong id="cart-pts-label">0 / 50 pts</strong>
+      </div>
+      <div class="loyalty-track">
+        <div class="loyalty-track__fill" id="cart-pts-fill" style="width: 0%;"></div>
+      </div>
+      <small id="cart-pts-hint">Agrega productos para acumular 1 pt por cada $10 MXN.</small>
+    </div>
+
+    <div class="cart-drawer__items" id="cart-items"></div>
+
+    <div class="cart-drawer__foot">
+      <div class="cart-total-row">
+        <span>Subtotal estimado</span>
+        <strong id="cart-subtotal">$0 MXN</strong>
+      </div>
+      <button type="button" class="btn btn--crimson btn--full" id="cart-checkout-btn">
+        Enviar este pedido en Opiniones
+      </button>
+    </div>
+  </aside>
+
+  <!-- MODAL: FICHA RÁPIDA DEL PRODUCTO -->
+  <div class="modal-backdrop" id="modal-producto" role="dialog" aria-modal="true" aria-labelledby="qv-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog--wide">
+      <div class="modal-header">
+        <h3 id="qv-title">Ficha Técnica del Producto</h3>
+        <button type="button" class="modal-close" data-close-modal aria-label="Cerrar ficha del producto">✕</button>
+      </div>
+      <div class="modal-body qv-grid">
+        <div class="qv-media">
+          <img id="qv-img" src="./assets/sabor-mix-tropical.jpg" alt="" width="405" height="616">
+        </div>
+        <div class="qv-info">
+          <span class="eyebrow eyebrow--crimson" id="qv-badge">Presentación 60 g</span>
+          <h4 id="qv-name" class="qv-name">Mix Tropical</h4>
+          <p id="qv-ingredients" class="qv-ingredients"></p>
+          <p id="qv-desc" class="qv-desc"></p>
+          <div class="qv-bom-box" id="qv-bom"></div>
+          <div class="qv-bars" id="qv-bars"></div>
+          <div class="qv-actions">
+            <strong class="sku-price" id="qv-price">$49 MXN</strong>
+            <button type="button" class="btn btn--crimson" id="qv-add-btn">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: ORGANIGRAMA OFICIAL COMPLETO -->
+  <div class="modal-backdrop" id="modal-organigrama" role="dialog" aria-modal="true" aria-labelledby="modal-org-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog--wide">
+      <div class="modal-header">
+        <h3 id="modal-org-title">Organigrama Ejecutivo Oficial — NUTICRIPS</h3>
+        <button type="button" class="modal-close" data-close-modal aria-label="Cerrar organigrama oficial">✕</button>
+      </div>
+      <div class="modal-body">
+        <img
+          src="./assets/organigrama-ejecutivo.jpg"
+          alt="Organigrama ejecutivo completo de NUTICRIPS con Dirección General, dos Subdirecciones y ocho departamentos"
+          class="modal-img"
+          width="1024"
+          height="576"
+        >
+        <p class="modal-caption">
+          Estructura organizacional proyectada de 49 plazas agrupadas en 8 departamentos bajo la Dirección General de Fátima Yatzire Méndez Robledo y las subdirecciones de Leonardo Moreno Rivera y Yaretzi Paola Guzmán Clavijo.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: TÉRMINOS Y CONDICIONES -->
+  <div class="modal-backdrop" id="modal-terminos" role="dialog" aria-modal="true" aria-labelledby="modal-terminos-title" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="modal-terminos-title">Términos y Condiciones — NUTICRIPS, S.A. de C.V.</h3>
+        <button type="button" class="modal-close" data-close-modal aria-label="Cerrar ventana de Términos y Condiciones">✕</button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Última actualización:</strong> Noviembre de 2026. Portal informativo y catálogo del proyecto <strong>NUTICRIPS, S.A. de C.V.</strong> (nombre comercial <strong>NatuCrisp®</strong>), con sede proyectada en Texcoco, Estado de México.</p>
+        <h4>1. Alcance del Catálogo y Proyecto Ejecutivo</h4>
+        <p>Los precios de referencia ($49.00 MXN por bolsa de 60 g y $185.00 MXN por pack de 4), la localización proyectada y el programa piloto <strong>NUTICRIPS Contigo</strong> derivan del Proyecto Ejecutivo 2026 y están sujetos a validación comercial y formalización societaria y sanitaria.</p>
+        <h4>2. Calidad e Inocuidad Alimentaria</h4>
+        <p>El modelo operativo contempla prácticas de higiene conforme a <strong>NOM-251-SSA1-2009</strong> y etiquetado bajo <strong>NOM-051-SCFI/SSA1-2010</strong>. Los snacks vegetales deshidratados son alimentos y no medicamentos.</p>
+        <h4>3. Programa Piloto NUTICRIPS Contigo</h4>
+        <p>Acumulación de 1 punto por cada $10 MXN efectivamente pagados y canje de 50 puntos por una bolsa elegible de 60 g durante una vigencia piloto de 90 días.</p>
+        <h4>4. Protección de Datos Personales (LFPDPPP)</h4>
+        <p>Los datos proporcionados en el formulario se utilizan únicamente para atender tus solicitudes y comentarios. Derechos ARCO disponibles en <strong>contacto@nuticrips.mx</strong>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: POLÍTICA DE COOKIES -->
+  <div class="modal-backdrop" id="modal-cookies" role="dialog" aria-modal="true" aria-labelledby="modal-cookies-title" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="modal-cookies-title">Política de Cookies y Privacidad — NUTICRIPS</h3>
+        <button type="button" class="modal-close" data-close-modal aria-label="Cerrar ventana de Política de Cookies">✕</button>
+      </div>
+      <div class="modal-body">
+        <p>En <strong>NUTICRIPS, S.A. de C.V.</strong> utilizamos almacenamiento local (<code>localStorage</code>) para recordar tu carrito y preferencias de privacidad.</p>
+        <h4>1. Cookies Esenciales</h4>
+        <p>Mantienen funcionando el carrito de pedido, los modales y tu consentimiento (<code>nuticrips_cookie_consent_v2</code>).</p>
+        <h4>2. Cookies Opcionales</h4>
+        <p>Ayudan a comprender qué sabores de 60 g generan mayor interés entre los visitantes.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST DE CARRITO AGREGADO -->
+  <div class="cart-toast" id="cart-toast" role="status" aria-live="polite"></div>
+
+  <!-- BANNER COMPACTO DE COOKIES -->
+  <aside class="cookie-banner" id="cookie-banner" role="region" aria-label="Aviso de Política de Cookies">
+    <strong class="cookie-banner__title">Privacidad en NUTICRIPS®</strong>
+    <p>
+      Usamos cookies esenciales para recordar tu carrito y preferencias. Consulta nuestra <a href="#modal-cookies" data-open-modal="modal-cookies">Política de Cookies</a>.
+    </p>
+    <div class="cookie-banner__actions">
+      <button type="button" class="btn btn--ghost-light btn--sm" id="cookie-save-prefs">Solo esenciales</button>
+      <button type="button" class="btn btn--crimson btn--sm" id="cookie-accept-all">Aceptar</button>
+    </div>
+  </aside>
+
+  <script src="./script.js"></script>
+</body>
+</html>
