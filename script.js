@@ -11,7 +11,7 @@
       id: 'tropical',
       name: 'Mix Tropical',
       badge: 'Más Vendido · 60 g',
-      price: 49,
+      price: 25,
       img: './assets/sabor-mix-tropical.jpg',
       alt: 'Bolsa NatuCrisp Mix Tropical de 60 g con plátano, piña, mango y fresa',
       ingredients: 'Plátano · Piña · Mango · Fresa',
@@ -28,7 +28,7 @@
       id: 'manzana',
       name: 'Manzana Canela',
       badge: 'Toque Canela · 60 g',
-      price: 49,
+      price: 25,
       img: './assets/sabor-manzana-canela.jpg',
       alt: 'Bolsa NatuCrisp Manzana Canela de 60 g',
       ingredients: 'Manzana fresca · Canela natural',
@@ -45,7 +45,7 @@
       id: 'verduras',
       name: 'Verduras Mix',
       badge: 'Opción Salada · 60 g',
-      price: 49,
+      price: 25,
       img: './assets/sabor-verduras-mix.jpg',
       alt: 'Bolsa NatuCrisp Verduras Mix de 60 g con zanahoria, betabel y calabaza',
       ingredients: 'Zanahoria · Betabel · Calabaza',
@@ -62,7 +62,7 @@
       id: 'platano',
       name: 'Plátano Natural',
       badge: 'Clásico 100% · 60 g',
-      price: 49,
+      price: 25,
       img: './assets/sabor-platano-natural.jpg',
       alt: 'Bolsa NatuCrisp Plátano Natural de 60 g',
       ingredients: '100% Plátano seleccionado',
@@ -79,7 +79,7 @@
       id: 'empaque',
       name: 'Empaque Kraft 60 g y Estructura BOM',
       badge: 'Control Industrial · Lote 600 pzas',
-      price: 49,
+      price: 25,
       img: './assets/portafolio-nuticrips.jpg',
       alt: 'Empaques kraft resellables NatuCrisp de 60 g',
       ingredients: 'Bolsa stand-up kraft + Ventana + Cierre + Etiqueta NOM-051',
@@ -95,13 +95,13 @@
     pack: {
       id: 'pack',
       name: 'Pack 4 Grandes Momentos',
-      badge: 'Pack 4 × 60 g · Ahorra $11',
-      price: 185,
+      badge: 'Pack 4 × 60 g · Ahorra $10',
+      price: 90,
       img: './assets/portafolio-nuticrips.jpg',
       alt: 'Pack Degustación NUTICRIPS con 4 bolsas de 60 g',
       ingredients: '1 Mix Tropical + 1 Manzana Canela + 1 Verduras Mix + 1 Plátano Natural',
       desc: 'Las cuatro variedades oficiales de NUTICRIPS en un solo paquete de 240 g totales.',
-      bom: 'Incluye 4 bolsas kraft resellables con trazabilidad de lote y 18 puntos NUTICRIPS Contigo.',
+      bom: 'Incluye 4 bolsas kraft resellables con trazabilidad de lote y 9 puntos NUTICRIPS Contigo.',
       chips: ['Mix Tropical', 'Manzana Canela', 'Verduras Mix', 'Plátano Natural'],
       bars: [
         { label: 'Variedad Completa', pct: 100 },
@@ -957,7 +957,7 @@
   const updateLoyaltySim = () => {
     if (!simSlider) return;
     const bags = parseInt(simSlider.value, 10) || 1;
-    const spent = bags * 49;
+    const spent = bags * 25;
     const pts = Math.floor(spent / 10);
     const pct = Math.min(100, (pts / 50) * 100);
     const unlocked = pts >= 50;
@@ -1102,7 +1102,7 @@
       `Nueva opinión desde el portal NUTICRIPS, S.A. de C.V.\n\n` +
         `Nombre: ${nombre}\nCorreo: ${correo}\nMotivo: ${tipo}\nVariedad favorita: ${sabor}\nCalificación: ${calif}/5\n\nMensaje:\n${mensaje}\n`
     );
-    const href = `mailto:contacto@nuticrips.mx?subject=${subject}&body=${body}`;
+    const href = `mailto:natucrisp42@gmail.com?subject=${subject}&body=${body}`;
 
     if (successTitle) successTitle.textContent = `¡Gracias, ${nombre.split(' ')[0]}!`;
     if (successDesc) {
